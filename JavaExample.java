@@ -1,38 +1,30 @@
-import java.util.Scanner;
-public class JavaExample
+import java.util.*;
+public class JavaExample 
 {
-public static void main(String[] args)
+public static void main(String args[]) 
 {
-int count;
-String temp;
-Scanner scan=new Scanner(System.in);
-System.out.println("Enter number of strings to enter:");
-count=scan.nextInt();
-String str[]=new String[count];
-Scanner scan2=new Scanner(System.in);
-System.out.println("enter the Strings one by one:");
-for(int i=0;i<count;i++)
-{
-str[i]=scan2.nextLine();
-}
-scan.close();
-scan2.close();
-for(int i=0;i<count;i++)
-{
-for(int j=i+1;j<count;j++)
-{
-if(str[i].compareTo(str[j])>0)
-{
-temp=str[i];
-str[i]=str[j];
-str[j]=temp;
-}
-}
-}
-System.out.print("string in sorted order:");
-for(int i=0;i<=count-1;i++)
-{
-System.out.print(str[i]+",");
-}
+ArrayList<String> obj = new ArrayList<String>();
+obj.add("Ajeet");
+obj.add("Harry");
+obj.add("Chaitanya");
+obj.add("Steve");
+obj.add("Anuj");
+System.out.println("Original ArrayList:");
+for(String str:obj)
+System.out.println(str);
+obj.add(0,"Rahul");
+obj.add(1,"Justin");
+System.out.println("ArrayList after add operation:");
+for(String str:obj)
+System.out.println(str);
+obj.remove("Chaitanya"); //Removes &quot;Chaitanya&quot; from ArrayList
+obj.remove("Harry"); //Removes &quot;Harry&quot; from ArrayList
+System.out.println("ArrayList after remove operation:");
+for(String str:obj)
+System.out.println(str);
+obj.remove(1); //Removes Second element from the List
+System.out.println("Final ArrayList:");
+for(String str:obj)
+System.out.println(str);
 }
 }
